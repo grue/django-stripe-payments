@@ -102,7 +102,11 @@ def change_plan(request):
         current_plan = None
     if form.is_valid():
         try:
-            request.user.customer.subscribe(form.cleaned_data["plan"], coupon=request.POST.get('coupon', None))
+            request.user.customer.subscribe(
+                form.cleaned_data["plan"],
+                coupon=request.POST.get("coupon", None)
+            )
+
             data = {
                 "form": PlanForm(initial={"plan": form.cleaned_data["plan"]})
             }

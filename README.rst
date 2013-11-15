@@ -4,8 +4,8 @@ django-stripe-payments
 
 a payments Django app for Stripe
 
-.. image:: https://travis-ci.org/eldarion/django-stripe-payments.png
-    :target: https://travis-ci.org/eldarion/django-stripe-payments
+.. image:: https://travis-ci.org/grue/django-stripe-payments.png
+    :target: https://travis-ci.org/grue/django-stripe-payments
 
 .. image:: https://coveralls.io/repos/eldarion/django-stripe-payments/badge.png
     :target: https://coveralls.io/r/eldarion/django-stripe-payments

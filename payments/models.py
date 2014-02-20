@@ -538,7 +538,8 @@ class Customer(StripeObject):
         )
 
     def subscribe(self, plan, quantity=None, trial_days=None,
-                  charge_immediately=True, token=None, coupon=None, prorate=False):
+                  charge_immediately=True, token=None,
+                  coupon=None, prorate=False):
         if quantity is None:
             if PLAN_QUANTITY_CALLBACK is not None:
                 quantity = PLAN_QUANTITY_CALLBACK(self)

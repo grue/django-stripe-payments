@@ -80,6 +80,9 @@ def change_card(request):
     try:
         customer = request.user.customer
         send_invoice = customer.card_fingerprint == ""
+        count = int(customer.current_subscription.amount)
+        if request.POST.get("coupon"):
+            customer.subscribe(plan=customer.current_subscription.plan, quantity=count, coupon=request.POST["coupon"])
         customer.update_card(
             request.POST.get("stripe_token")
         )

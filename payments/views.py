@@ -81,7 +81,7 @@ def change_card(request):
         customer = request.user.customer
         send_invoice = customer.card_fingerprint == ""
         if request.POST.get("coupon"):
-            count = max(z.customer.user.company_set.all()[0].employee_set.filter(is_active=True).count(), 3)
+            count = max(customer.user.company_set.all()[0].employee_set.filter(is_active=True).count(), 3)
             customer.subscribe(plan=customer.current_subscription.plan, quantity=count, coupon=request.POST["coupon"])
         customer.update_card(
             request.POST.get("stripe_token")
